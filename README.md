@@ -11,12 +11,12 @@ TODO
 - [ ] Records exercise data
 - [ ] Records one exercise type only
 - [ ] Raw SQL or Entity Framework
-- [ ] Model should contain at least:
-  - [ ] Id INT
-  - [ ] DateStart DateTime 
-  - [ ] DateEnd DateTime
-  - [ ] Duration Timespan
-  - [ ] Comments string
+- [X] Model should contain at least:
+  - [X] Id INT
+  - [X] DateStart DateTime 
+  - [X] DateEnd DateTime
+  - [X] Duration Timespan
+  - [X] Comments string
 - [ ] Application should have the following classes:
   - [ ] UserInput
   - [ ] ExerciseController
