@@ -1,3 +1,4 @@
+using Dapper;
 using Exercise_Tracker.Controllers;
 using Exercise_Tracker.Model;
 
@@ -38,7 +39,17 @@ internal class ExerciseRepository : IRepository<Exercise>
     
     public Exercise GetById(int id)
     {
-        throw new NotImplementedException();
+        using var connection = _controller.GetConnection();
+
+        var sql = """
+                  SELECT *
+                  FROM Exercise 
+                  WHERE Id = @id;
+                  """;
+        
+        var response = connection.QuerySingle<Exercise>(sql, new { id });
+        
+        return response;
     }
 
     public IEnumerable<Exercise> GetAll()
@@ -48,7 +59,14 @@ internal class ExerciseRepository : IRepository<Exercise>
 
     public void Add(Exercise entity)
     {
-        throw new NotImplementedException();
+        using var connection = _controller.GetConnection();
+
+        var sql = """
+                  INSERT INTO Exercise (DateStart, DateEnd, Comments)
+                  VALUES (@DateStart, @DateEnd, @Comments)
+                  """;
+        
+        connection.Execute(sql, entity);
     }
 
     public void Update(Exercise entity)
