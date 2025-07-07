@@ -1,5 +1,6 @@
-# TCSA-Template
-A template repo for The C Sharp Academy work
+# Exercise Tracker 
+
+A project to build an application using the repository design pattern.
 
 # How to use
 
@@ -7,11 +8,26 @@ TODO
 
 # Requirements
 
-- [ ] Get requirements from site
+- [ ] Records exercise data
+- [ ] Records one exercise type only
+- [ ] Raw SQL or Entity Framework
+- [ ] Model should contain at least:
+  - [ ] Id INT
+  - [ ] DateStart DateTime 
+  - [ ] DateEnd DateTime
+  - [ ] Duration Timespan
+  - [ ] Comments string
+- [ ] Application should have the following classes:
+  - [ ] UserInput
+  - [ ] ExerciseController
+  - [ ] ExerciseService (where business logic is handled)
+  - [ ] ExerciseRepository
+- [ ] SQLite or SQLServer
+- [ ] Uses dependency injection to access repository from controller
 
 ## Stretch Goals
 
-- [ ] Stretch goals from site or self
+- [ ] Implement the other SQL type as an option 
 
 # Features
 
